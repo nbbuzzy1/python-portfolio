@@ -2,21 +2,36 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 
-@app.route('/<username>/<int:user_id>')
-def hello_world(username=None, user_id=None):
-    return render_template('index.html', name=username, user_id=user_id)
+@app.route('/<string:page_name>')
+def html_page(page_name):
+    return render_template(page_name)
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+# @app.route('/')
+# def my_home():
+#     return render_template('index.html')
 
 
-@app.route('/favicon.ico')
-def blog():
-    return 'These are my thoughts on blogs'
+# @app.route('/index.html')
+# def my_home2():
+#     return render_template('index.html')
 
 
-@app.route('/blog/2020/dogs')
-def blog2():
-    return 'this is my dog'
+# @app.route('/about.html')
+# def about():
+#     return render_template('about.html')
+
+
+# @app.route('/contact.html')
+# def contact():
+#     return render_template('contact.html')
+
+
+# @app.route('/work.html')
+# def work():
+#     return render_template('work.html')
+
+
+# @app.route('/works.html')
+# def works():
+#     return render_template('works.html')
